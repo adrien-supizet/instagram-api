@@ -1,3 +1,4 @@
 export const headerText = {
-  title: 'Title of the app'
+  title: 'Photos near me',
+  subtitle: 'With React and Instragam developer API'
 };
