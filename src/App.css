@@ -1,20 +1,20 @@
 .App {
-  display: flex;
-  flex: 1;
-  min-height: 1000px;
-  align-content: center;
-  flex-direction: column;
+    display: flex;
+    flex: 1;
+    min-height: 1000px;
+    align-content: center;
+    flex-direction: column;
 }
 
 .App-feed {
-  display: flex;
-  background-color: #777777;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
+    display: flex;
+    background-color: #777777;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: calc(10px + 2vmin);
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
