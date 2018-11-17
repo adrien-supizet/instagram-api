@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-
-export default class Feed extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            longitude: 0,
-            latitude: 0
-        };
-    }
-
+import { connect } from 'react-redux';
+class Feed extends Component {
     componentDidMount() {
-        this.setState({ location: navigator.geolocation });
+        // a redux middleware would be prefered to return a promise from the reducer function
         navigator.geolocation.getCurrentPosition(position =>
-            this.setState({ longitude: position.coords.longitude, latitude: position.coords.latitude })
+            this.props.dispatch({
+                type: 'SET_LOCATION',
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude
+            })
         );
     }
     render() {
-        console.log(this.state.latitude);
-        return <div style={styles} {...this.props} />;
+        return <div style={styles}>{this.props.latitude}</div>;
     }
 }
+
+const mapStateToProps = state => ({
+    longitude: state.longitude,
+    latitude: state.latitude
+});
 
 const styles = {
     fontWeight: 'bold',
     fontFamily: 'Montserrat-Regular',
     color: 'black'
 };
+
+export default connect(mapStateToProps)(Feed);
