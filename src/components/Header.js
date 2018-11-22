@@ -4,7 +4,6 @@ const instaLogo = require('../res/img/instagram-logo.png');
 const reactLogo = require('../res/img/react-logo.png');
 
 export default class Header extends PureComponent {
-    componentDidMount() {}
     render() {
         return (
             <header style={styles.header} {...this.props}>

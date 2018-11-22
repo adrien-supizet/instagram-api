@@ -1,11 +1,10 @@
-//import { combineReducers } from 'redux';
-
 const initialState = {
     latitude: 0,
-    longitude: 0
+    longitude: 0,
+    access_token: ''
 };
 
-const reducer = (state = initialState, action) => {
+const location = (state = initialState, action) => {
     console.log(action);
     switch (action.type) {
         case 'SET_LOCATION':
@@ -13,9 +12,11 @@ const reducer = (state = initialState, action) => {
                 latitude: action.latitude,
                 longitude: action.Longitude
             };
+        case 'SET_TOKEN':
+            return { token: action.token };
         default:
             return state;
     }
 };
 
-export default reducer;
+export default location;
